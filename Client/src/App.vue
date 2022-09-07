@@ -1,26 +1,14 @@
 <template>
   <div>
-    <li v-for="game in gameData" :key="game.id">{{ game.name }} by {{ game.company }}</li>
+    <HeroContainerVue />
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
+import HeroContainerVue from './components/Body/Hero/HeroContainer.vue';
 export default {
-  data: function () {
-    return {
-      gameData: []
-    }
-  },
-  created(){
-    axios.get("http://localhost:8000/api/games/all").then((res) => {
-      this.$data.gameData = res.data;
-    });
+  components: {
+    HeroContainerVue,
   }
 }
 </script>
-
-<style>
-
-</style>
