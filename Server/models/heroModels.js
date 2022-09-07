@@ -1,24 +1,24 @@
 const mongoose = require('mongoose');
 
-const gameSchema = mongoose.Schema({
+const heroSchema = mongoose.Schema({
     name: {
         type: String,
         required: [true, 'The name field is required.']
     },
-    company: {
+    image: {
         type: String,
-        required: [true, 'The company field is required.']
+        required: [true, 'The image field is required.']
     },
     category: {
         type: String,
         required: [true, 'The category field is required.']
     },
-    price: {
-        type: Number,
-        required: [true, 'The price field is required.']
+    description: {
+        type: String,
+        required: [true, 'The description field is required.']
     },
 }, {
     timestamps: true
 })
 
-module.exports = mongoose.model('Games', gameSchema);
+module.exports = mongoose.model('Heroes', heroSchema);
